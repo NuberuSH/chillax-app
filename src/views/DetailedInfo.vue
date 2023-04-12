@@ -15,14 +15,16 @@
   </template>
   
   <script>
-  import { ref } from 'vue';
+  import { onMounted, ref } from 'vue';
   
   export default {
     setup() {
       const movieData = ref({});
-  
+      onMounted(() => {
+showMovieInfo(502356)
+})
       const showMovieInfo = (idMovie) => {
-        fetch(`https://api.themoviedb.org/3/movie/502356?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES`)
+        fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES`)
         .then(response => {
           return response.json();
         })
