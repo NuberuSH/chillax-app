@@ -4,7 +4,7 @@
         <h1 class="movie-h1">{{ movieData.title }}</h1>
         <hr/>
         <div class="small-container">
-          <img :src="'https://image.tmdb.org/t/p/w500' + movieData.poster_path" :alt="'Portada de la pelí­cula ' + movieData.title" id="movie-poster">
+          <img :src="'https://image.tmdb.org/t/p/w500' + movieData.poster_path" :alt="'Portada de la película ' + movieData.title" id="movie-poster">
           <div id="info-body">
             <div class="additional-info">
               <p class="release-date">Fecha de estreno: {{ movieData.release_date }}</p>            
@@ -18,13 +18,17 @@
   import { onMounted, ref } from 'vue';
   
   export default {
-    setup() {
+    props: {
+      id: Number,
+      type: String,
+     },
+    setup(props) {
       const movieData = ref({});
       onMounted(() => {
-          showMovieInfo(502356)
+          showMovieInfo()
       })
-      const showMovieInfo = (idMovie) => {
-        fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES`)
+      const showMovieInfo = () => {
+        fetch(`https://api.themoviedb.org/3/${props.type}/${props.id}?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES`)
         .then(response => {
           return response.json();
         })
@@ -47,7 +51,7 @@
           additionalInfo.appendChild(genres);
           const networks = document.createElement('p');
           networks.className = 'networks';
-          networks.innerText = 'Red/es: ';
+          networks.innerText = 'Productoras: ';
           for (let i = 0; i < data.production_companies.length; i++) {
             if (i < data.production_companies.length - 1) {
               networks.innerText += `${data.production_companies[i].name}, `;
@@ -69,12 +73,12 @@
         const container = document.getElementById('container');
         container.className = '';
         container.innerHTML = `
-          <h2 class="section-title">Pelí­culas</h2>
+          <h2 class="section-title">Películas</h2>
           <hr>
           <div id="movie-list">
   
           </div>
-          <div class="show-more" onclick="redirectToMovies()">Mostrar más pelÃ­culas</div>
+          <div class="show-more" onclick="redirectToMovies()">Mostrar más películas</div>
           <div id="series">
             <h2 class="section-title">Series</h2>
             <hr>

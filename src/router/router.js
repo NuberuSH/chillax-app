@@ -1,19 +1,3 @@
-// import { createRouter, createWebHistory } from 'vue-router'
-// import Home from './views/Home.vue'
-// import About from './views/About.vue'
-
-// const routes = [
-//   { path: '/', component: Home },
-//   { path: '/about', component: About },
-// ]
-
-// const router = createRouter({
-//   history: createWebHistory(),
-//   routes,
-// })
-
-// export default router
-
 import { createRouter, createWebHistory } from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
 import DetailedInfo from '../views/DetailedInfo.vue'
@@ -27,18 +11,24 @@ const router = createRouter({
       name: 'home',
       component: HelloWorld
     },
+    // {
+    //   path: '/detailedInfo',
+    //   name: 'DetailedInfo',
+    //   component: DetailedInfo
+    // },
     {
-      path: '/movieInfo',
+      path: '/detailedInfo/:type/:id',
+      props: true,
       name: 'DetailedInfo',
       component: DetailedInfo
     },
     // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
+      // path: '/:type/:id',
+      // name: '',
+      // // route level code-splitting
+      // // this generates a separate chunk (About.[hash].js) for this route
+      // // which is lazy-loaded when the route is visited.
+      // component: () => import('../views/AboutView.vue')
     // }
   ]
 })
