@@ -16,6 +16,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
+import DetailedInfo from '../views/DetailedInfo.vue'
 // import ServicesView from '../views/ServicesView.vue'
 
 const router = createRouter({
@@ -26,11 +27,11 @@ const router = createRouter({
       name: 'home',
       component: HelloWorld
     },
-    // {
-    //   path: '/services',
-    //   name: 'services',
-    //   component: ServicesView
-    // },
+    {
+      path: '/movieInfo',
+      name: 'DetailedInfo',
+      component: DetailedInfo
+    },
     // {
     //   path: '/about',
     //   name: 'about',
