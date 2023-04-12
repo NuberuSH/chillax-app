@@ -21,8 +21,8 @@
     setup() {
       const movieData = ref({});
       onMounted(() => {
-showMovieInfo(502356)
-})
+          showMovieInfo(502356)
+      })
       const showMovieInfo = (idMovie) => {
         fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=039e4f7f61c4c831908c02f8c3e9aba0&language=es-ES`)
         .then(response => {
