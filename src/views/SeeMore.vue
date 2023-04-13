@@ -33,7 +33,7 @@
                 <div class="more-text additional" v-show="showText">
                   <p class="text-14px font-light text-white mx-2 p-2">Soy una profesional polivalente con más de siete años de
                     experiencia atendiendo al público. Recientemente he empezado a estudiar Desarrollo Web Frontend, después de haber terminado 
-                    mis estudios de Fullstack ya que la programación es algo que siempre me ha interesado.</p>
+                    mis estudios de FullStack ya que la programación es algo que siempre me ha interesado.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/cgabad/" target="_blank">LinkedIn.</a>
                 </div> 
             </div>
@@ -48,7 +48,7 @@
               </button>
                 <div class="more-text additional" v-show="showText">
                   <p class="text-14px font-light text-white mx-2 p-2">He finalizado recientemente un Ciclo Superior de Desarrollo de Aplicaciones Web y 
-                    ahora me encuentro enfocado en aprender desarrollo Front End y estoy disfrutando mucho de este proceso de aprendizaje.
+                    ahora me encuentro enfocado en aprender desarrollo web Frontend y estoy disfrutando mucho de este proceso de aprendizaje.
                     Me encanta el desafío que presenta el trabajo en este campo, y el trabajo en equipo.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/adrian-jimenez-fernandez/" target="_blank">LinkedIn.</a>
                 </div> 
@@ -80,7 +80,7 @@
               </button>
                 <div class="more-text additional" v-show="showText">
                   <p class="text-14px font-light text-white mx-2 p-2">He estudiado administración de sistemas informáticos y también he completado un curso de
-                     desarrollo full stack, me gusta mantenerme actualizado con las últimas tendencias en el campo de la informática. Me gusta resolver problemas complejos para mejorar la experiencia del usuario.
+                     desarrollo Fullstack. Me gusta mantenerme actualizado con las últimas tendencias en informática y resolver problemas complejos para mejorar la experiencia del usuario.
                     </p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://linkedin.com/in/daniel-tallon" target="_blank">LinkedIn.</a>
                 </div> 
@@ -97,7 +97,7 @@
               </button>
                 <div class="more-text additional" v-show="showText">
                   <p class="text-14px font-light text-white mx-2 p-2">Anteriormente me dedicaba a la cocina, pero me di cuenta de que mi verdadera pasión es el mundo de la tecnología. 
-                    Decidí dar un giro a mi carrera y me inscribí en un curso de desarrollo full stack, el cual completé con éxito. Ahora estoy enfocada en mejorar mis habilidades en el desarrollo front end.</p>
+                    Decidí dar un giro a mi carrera y me inscribí en un curso de desarrollo Fullstack, el cual completé con éxito. Ahora estoy enfocada en mejorar mis habilidades en el desarrollo Frontend.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/rosa-jiménez-martínez-915170256/" target="_blank">LinkedIn.</a>
                 </div> 
             </div>
@@ -124,7 +124,11 @@ export default {
   },  
   methods: {
     seeMoreButton() {
-      this.showText = true;
+      if (this.showText) {
+        this.showText = false;
+      } else {
+        this.showText = true;
+      }
     }
   }
 };
