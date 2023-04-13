@@ -31,9 +31,9 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">Soy una profesional dedicada, creativa y polivalente con más de siete años de
-                    experiencia atendiendo al público, así como en ventas y administración. Tengo experiencia tanto en
-                    España como en el Reino unido, por lo que soy muy adaptable.</p>
+                  <p class="text-14px font-light text-white mx-2 p-2">Soy una profesional polivalente con más de siete años de
+                    experiencia atendiendo al público. Recientemente he empezado a estudiar Desarrollo Web Frontend, después de haber terminado 
+                    mis estudios de Fullstack ya que la programación es algo que siempre me ha interesado.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/cgabad/" target="_blank">LinkedIn.</a>
                 </div> 
             </div>
@@ -47,9 +47,9 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">He finalizado recientemente un CFGS de Desarrollo de Aplicaciones Web y busco mi primer empleo en el
-                    sector para seguir ampliando conocimientos y comenzar mi carrera profesional.
-                    Actualmente realizando un bootcamp de programación frontend en la EOI.</p>
+                  <p class="text-14px font-light text-white mx-2 p-2">He finalizado recientemente un Ciclo Superior de Desarrollo de Aplicaciones Web y 
+                    ahora me encuentro enfocado en aprender desarrollo Front End y estoy disfrutando mucho de este proceso de aprendizaje.
+                    Me encanta el desafío que presenta el trabajo en este campo, y el trabajo en equipo.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/adrian-jimenez-fernandez/" target="_blank">LinkedIn.</a>
                 </div> 
             </div>
@@ -63,10 +63,10 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">Soy diseñadora gráfica y estudiante de desarrollo FrontEnd, apasionada por el diseño y la tecnología.
-                  He estado aprendiendo sobre la metodología Scrum para la gestión de proyectos de desarrollo
-                  de software, con mi compromiso por mejorar y mantenerme actualizada en el campo de la tecnología.</p>
-                  <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/patricia-cabrera-088b2a8b/" target="_blank">LinkedIn.</a>
+                  <p class="text-14px font-light text-white mx-2 p-2">Después de más de cinco años trabajando en el sector del diseño 
+                    y el calzado, busco nuevos retos de aprendizaje, y la tecnología, siendo tan amplia, es un mundo lleno de oportunidades.
+                    Por eso, en el Desarrollo Web, busco un nuevo camino profesional y crecer en el sector tecnológico.</p>
+                  <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/patriciasamudiocabrera/" target="_blank">LinkedIn.</a>
                </div> 
             </div>
           </figcaption>
@@ -79,7 +79,8 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">Actualmente realizando un bootcamp de programación frontend en la Escuela de Organización Industrial.
+                  <p class="text-14px font-light text-white mx-2 p-2">He estudiado administración de sistemas informáticos y también he completado un curso de
+                     desarrollo full stack, me gusta mantenerme actualizado con las últimas tendencias en el campo de la informática. Me gusta resolver problemas complejos para mejorar la experiencia del usuario.
                     </p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://linkedin.com/in/daniel-tallon" target="_blank">LinkedIn.</a>
                 </div> 
@@ -95,7 +96,8 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">Actualmente realizando un bootcamp de programación frontend en la Escuela de Organización Industrial.</p>
+                  <p class="text-14px font-light text-white mx-2 p-2">Anteriormente me dedicaba a la cocina, pero me di cuenta de que mi verdadera pasión es el mundo de la tecnología. 
+                    Decidí dar un giro a mi carrera y me inscribí en un curso de desarrollo full stack, el cual completé con éxito. Ahora estoy enfocada en mejorar mis habilidades en el desarrollo front end.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/rosa-jiménez-martínez-915170256/" target="_blank">LinkedIn.</a>
                 </div> 
             </div>
