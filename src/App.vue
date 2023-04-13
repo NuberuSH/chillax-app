@@ -1,5 +1,5 @@
 <script setup>
-import About from './views/SeeMore.vue'
+import About from './views/About.vue'
 
 </script>
 

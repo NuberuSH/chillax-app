@@ -5,19 +5,19 @@
         <a href="/" class="text-white no-underline">
           <img src="/images/logo/chillaxSombras.svg" alt="logo" id="logoc" />
         </a>
-        <ul class="navbar lg:text-shadow lg:text-white lg:list-none lg:text-2xl flex items-center">
+        <ul class="navbar lg:text-shadow lg:text-white lg:list-none lg:text-2xl flex items-center " >
           <li id="about" class="hover:text-gray-500 hover:no-underline p-3"><a href='/catalog/catalog.html'>Catálogo</a>
           </li>            
         </ul>
       </header>
 
       <h1 class="block self-center text-3xl font-bold my-2 max-w-max text-gray-200 text-shadow mb-5">Los Linces</h1>
-      <p class="text-center text-gray-200 text-shadow text-base lg:text-lg mb-5">"Somos un grupo de cinco programadores apasionados y trabajadores, siempre en busca de nuevos desafíos y aventuras
+      <p class="text-center text-gray-200 text-shadow text-base lg:text-lg mb-5">"Somos un grupo de cinco programadores* apasionados y trabajadores, siempre en busca de nuevos desafíos y aventuras
         emocionantes. Desde el principio, hemos puesto todo nuestro empeño en conseguir un buen resultado, basándonos en
         la comunicación y el debate continuo para alcanzar el objetivo de nuestra página. Al igual que un lince en el
         bosque, este grupo posee una aguda percepción y una gran habilidad para adaptarse al entorno y enfrentar nuevos
         desafíos, lo que nos permite tener éxito en nuestras misiones. Porque no es lo que hacemos, es lo que somos."
-        <br> <strong class="text-10px">*Dale al play si quieres saber más sobre cada uno de nosotros*</strong>
+        <br> <strong class="text-xs">* Dale al play si quieres saber más sobre nosotros</strong>
       </p>
 
       <hr class="mx-1 my-3 border-gray-300">
@@ -31,7 +31,7 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">Soy una profesional polivalente con más de siete años de
+                  <p class="text-xm font-light text-white mx-2 p-2">Soy una profesional polivalente con más de siete años de
                     experiencia atendiendo al público. Recientemente he empezado a estudiar Desarrollo Web Frontend, después de haber terminado 
                     mis estudios de FullStack ya que la programación es algo que siempre me ha interesado.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/cgabad/" target="_blank">LinkedIn.</a>
@@ -47,10 +47,10 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">He finalizado recientemente un Ciclo Superior de Desarrollo de Aplicaciones Web y 
+                  <p class="text-xm font-light text-white mx-2 p-2">He finalizado recientemente un C.S. de Desarrollo de Aplicaciones Web y 
                     ahora me encuentro enfocado en aprender desarrollo web Frontend y estoy disfrutando mucho de este proceso de aprendizaje.
                     Me encanta el desafío que presenta el trabajo en este campo, y el trabajo en equipo.</p>
-                  <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/adrian-jimenez-fernandez/" target="_blank">LinkedIn.</a>
+                  <a class="hover:text-red-500 italic text-20px font-extrabold " href="https://www.linkedin.com/in/adrian-jimenez-fernandez/" target="_blank">LinkedIn.</a>
                 </div> 
             </div>
           </figcaption>
@@ -63,7 +63,7 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">Después de más de cinco años trabajando en el sector del diseño 
+                  <p class="text-xm font-light text-white mx-2 p-2">Después de más de cinco años trabajando en el sector del diseño 
                     y el calzado, busco nuevos retos de aprendizaje, y la tecnología, siendo tan amplia, es un mundo lleno de oportunidades.
                     Por eso, en el Desarrollo Web, busco un nuevo camino profesional y crecer en el sector tecnológico.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/patriciasamudiocabrera/" target="_blank">LinkedIn.</a>
@@ -79,7 +79,7 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">He estudiado administración de sistemas informáticos y también he completado un curso de
+                  <p class="text-xm font-light text-white mx-2 p-2">He estudiado administración de sistemas informáticos y también he completado un curso de
                      desarrollo Fullstack. Me gusta mantenerme actualizado con las últimas tendencias en informática y resolver problemas complejos para mejorar la experiencia del usuario.
                     </p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://linkedin.com/in/daniel-tallon" target="_blank">LinkedIn.</a>
@@ -96,7 +96,7 @@
                 <img class="hover:rotate-90 delay-100 duration-300 h-14 w-14" src="/images/logo/play.svg" alt="Ver más">
               </button>
                 <div class="more-text additional" v-show="showText">
-                  <p class="text-14px font-light text-white mx-2 p-2">Anteriormente me dedicaba a la cocina, pero me di cuenta de que mi verdadera pasión es el mundo de la tecnología. 
+                  <p class="text-xm font-light text-white mx-2 p-2">Anteriormente me dedicaba a la cocina, pero me di cuenta de que mi verdadera pasión es el mundo de la tecnología. 
                     Decidí dar un giro a mi carrera y me inscribí en un curso de desarrollo Fullstack, el cual completé con éxito. Ahora estoy enfocada en mejorar mis habilidades en el desarrollo Frontend.</p>
                   <a class="hover:text-red-500 italic text-16px font-extrabold " href="https://www.linkedin.com/in/rosa-jiménez-martínez-915170256/" target="_blank">LinkedIn.</a>
                 </div> 
