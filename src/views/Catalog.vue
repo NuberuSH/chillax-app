@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="container">
+  <div class="">
+    <div class="container mb-20 mt-16">
       <h2 class="section-title">Películas</h2>
       <hr>
       <div id="movie-list"></div>
@@ -12,11 +12,6 @@
         <div class="show-more" @click="redirectToSeries()">Mostrar más series</div>
       </div>
     </div>
-    <footer>
-      <p>Â© CHILLAX 2023</p>
-      <p class="api-disclaimer">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-      <img src="/images/logo/TMDB_long.svg" alt="Logo de TMDB" class="api-logo">
-    </footer>
   </div>
 </template>
 
