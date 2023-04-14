@@ -1,28 +1,30 @@
 <template>
-  <nav class="fixed left-0 top-0 w-full z-10 duration-300" :class="{
-    'bg-gray-100 py-2 px-4 border-b': scrolledY > 0,
+  <nav class="fixed left-0 top-0 w-full z-10 transition duration-300" :class="{
+    'bg-web-navbar opacity-95 py-1 px-4 border-b': scrolledY > 0,
     'py-1 px-6': scrolledY === 0
   }">
     <div class="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-7 lg:px-8 duration-300" :class="{
-      'py-2': scrolledY > 0,
-      'py-4': scrolledY === 0
+      'py-0': scrolledY > 0,
+      'py-1': scrolledY === 0
     }">
       <div class="flex items-center">
+        <a href="https://chillax.today" target="_blank">
         <img class="h-[40px] w-auto duration-300" src="/images/logo/chillaxSombras.svg" :class="{
-          'md:h-[30px]': scrolledY > 0,
+          'md:h-[60px]': scrolledY > 0,
           'md:h-[70px]': scrolledY === 0
         }" alt="logo">
+        </a>
       </div>
-      <div class="hidden md:flex">
-        <a href="#" class="text-gray-600 transition duration-150 ease-in-out hover:text-gray-800 mx-4">
-          Home
-        </a>
-        <a href="#" class="text-gray-600 transition duration-150 ease-in-out hover:text-gray-800 mx-4">
-          About
-        </a>
-        <a href="#" class="text-gray-600 transition duration-150 ease-in-out hover:text-gray-800 mx-4">
-          Services
-        </a>
+      <div class="hidden md:flex text-white text-shadow-0">
+        <router-link to="/" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4" >
+          Catálogo
+        </router-link>
+        <router-link to="/movies" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4">
+          Trending
+        </router-link>
+        <router-link to="/movies" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4">
+          Sobre nosotros
+        </router-link>
       </div>
       <div class="flex md:hidden">
         <button @click="isMenuOpen = true" type="button"
