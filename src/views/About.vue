@@ -40,7 +40,7 @@
             name: 'Carla',
             surname: 'Gómez Abad',
             image: 'carla.png',
-            description: 'Soy una profesional polivalente con más de siete años de experiencia atendiendo al público.',
+            description: 'Soy una profesional polivalente con más de siete años de experiencia atendiendo al público. Siempre me ha llamado la atención el mundo de la programación.',
             linkedin: 'https://www.linkedin.com/in/cgabad/',
             showText: false 
           },
