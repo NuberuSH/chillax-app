@@ -1,16 +1,17 @@
 <template>
     <div>
-shows
+<TvShowsListLite></TvShowsListLite>
     </div>
 </template>
 
 <script>
-export default {
-    setup () {
-        
+import TvShowsListLite from '../components/TvShowsListLite.vue';
 
-        return {}
-    }
+export default {
+    setup() {
+        return {};
+    },
+    components: { TvShowsListLite }
 }
 </script>
 

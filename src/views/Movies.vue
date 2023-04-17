@@ -1,16 +1,17 @@
 <template>
     <div>
-movies
+<MoviesList></MoviesList>
     </div>
 </template>
 
 <script>
-export default {
-    setup () {
-        
+import MoviesList from '../components/MoviesList.vue';
 
-        return {}
-    }
+export default {
+    setup() {
+        return {};
+    },
+    components: { MoviesList }
 }
 </script>
 
