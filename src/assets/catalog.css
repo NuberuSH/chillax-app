@@ -446,7 +446,7 @@ nav {
 
 #movie-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
     margin-top: 25px;
     font-weight: bolder;
@@ -454,7 +454,7 @@ nav {
 
 #series-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
     margin-top: 25px;
     font-weight: bolder;
