@@ -1,6 +1,6 @@
 <template>
     <div>
-       <div id="series-list">
+       <div id="movie-list" class="grid-cols-5">
          <router-link v-for="movie in moviesList" :key="movie.id" class="movie" :to="{ name: 'home', params: {id: movie.id}}">
            <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="`Poster of the movie: ${movie.name}`">
            <div class="movie-footer">
@@ -27,8 +27,7 @@ export default {
                     }
                 });
                 page.value = response.data.page;
-                moviesList.value = response.data.results.slice(0, 6);
-                moviesList.results.genre_ids = response.data.results.genre_ids.slice(0, 6);
+                moviesList.value = response.data.results.slice();
             } catch (error) {
                 console.error(error);
             }
@@ -41,6 +40,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
