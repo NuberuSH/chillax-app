@@ -19,11 +19,15 @@ export default {
     setup() {
         const tvShowsList = ref([]);
         const page = ref()
+        const selectedGenre = ref();
+        const contentType = ref('tv');
         onMounted(async () => {
             try {
-                const response = await axios.get('/.netlify/functions/getTvShows', {
+                const response = await axios.get('/.netlify/functions/getContent', {
                     params: {
                         page: page.value,
+                        selectedGenre: selectedGenre.value,
+                        contentType: contentType.value
                     }
                 });
                 page.value = response.data.page;
