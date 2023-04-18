@@ -3,6 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -25,9 +51,8 @@
 */
 html,
 body {
-  height: 100%;
   font-size: larger;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 /*
@@ -83,12 +108,6 @@ h6 {
   isolation: isolate;
 }
 
-/* @font-face {
-  font-family: RobotoSlab;
-  font-weight: 700;
-  src: url("../fonts/RobotoSlab.ttf");
-} */
-
 @font-face {
   font-family: Montserrat;
   src: url("/fonts/montserrat-vf.woff2");
@@ -96,47 +115,8 @@ h6 {
   font-stretch: 50% 200%;
 }
 
-@layer components {
-  .button-web {
-    @apply font-montserrat font-bold w-fit px-4 sm:px-10 py-2 text-lg sm:text-2xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-2xl mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton;
-  }
-
-  .web-out-of-focus {
-    @apply fixed left-0 top-0 w-screen h-screen bg-black opacity-40 z-10;
-  }
-
-  .web-in-focus {
-    @apply fixed bg-transparent left-0 top-0 w-screen h-screen duration-1000 -z-10;
-  }
-
-  .menu-open {
-    @apply fixed right-0 top-0 w-[300px] h-screen flex flex-col border-gray-700 shadow-2xl  bg-web-fondo  duration-500 z-20;
-  }
-
-  .menu-closed {
-    @apply fixed right-[-100%] top-0 w-[300px] h-screen flex flex-col duration-500 z-20;
-  }
-
-  .nav-visible {
-    @apply fixed duration-300;
-  }
-
-  .nav-not-visible {
-    @apply fixed translate-y-[-100%] duration-300;
-  }
-
-  .logo {
-    @apply fixed duration-300;
-  }
-}
-
-.custom-shape-divider-bottom-1669113248 {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
+.social:hover {
+  filter: invert(48%) sepia(35%) saturate(923%) hue-rotate(183deg) brightness(77%) contrast(102%);
 }
 
 .text-shadow-2 {
@@ -155,6 +135,16 @@ h6 {
     -1px -1px 0 #000;
 }
 
-.social:hover {
-  filter: invert(48%) sepia(35%) saturate(923%) hue-rotate(183deg) brightness(77%) contrast(102%);
+.text-shadow-0 {
+  text-shadow:
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px -0.5px 0 #000;
+}
+
+@layer components {
+    .logo {
+        @apply fixed duration-300;
+      }
 }

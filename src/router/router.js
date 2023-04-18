@@ -1,21 +1,6 @@
-// import { createRouter, createWebHistory } from 'vue-router'
-// import Home from './views/Home.vue'
-// import About from './views/About.vue'
-
-// const routes = [
-//   { path: '/', component: Home },
-//   { path: '/about', component: About },
-// ]
-
-// const router = createRouter({
-//   history: createWebHistory(),
-//   routes,
-// })
-
-// export default router
-
 import { createRouter, createWebHistory } from 'vue-router'
-import About from '../views/About.vue'
+import Catalog from '../views/Catalog.vue'
+// import Movies from '../views/Movies.vue'
 // import ServicesView from '../views/ServicesView.vue'
 
 const router = createRouter({
@@ -23,22 +8,24 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'about',
-      component: About
+      name: 'home',
+      component: Catalog
     },
-    // {
-    //   path: '/services',
-    //   name: 'services',
-    //   component: ServicesView
-    // },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
+    {
+      path: '/movies',
+      name: 'movies',
+      component: () => import('../views/Movies.vue')
+    },
+    {
+      path: '/shows',
+      name: 'shows',
+      component: () => import('../views/Shows.vue')
+    },
+        {
+      path: '/test',
+      name: 'test',
+      component: () => import('../components/MoviesListLite.vue')
+    }
   ]
 })
 
