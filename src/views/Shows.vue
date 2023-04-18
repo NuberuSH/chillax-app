@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TvShowsListLite from '../components/TvShowsList.vue';
+import TvShowsList from '../components/TvShowsList.vue';
 
 export default {
     setup() {
