@@ -4,8 +4,8 @@ import fetch from 'node-fetch';
 export const handler = async (event, context) => {
   try {
     const apiToken = process.env.TMDB_API_KEY;
-    const page = parseInt(event.queryStringParameters.page) || 1;
-    const apiUrl = 'https://api.themoviedb.org/3/discover/movie?api_key=' + apiToken + '&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=' + page;
+    const contentType = event.queryStringParameters.contentType;
+    const apiUrl = 'https://api.themoviedb.org/3/genre/' + contentType + '/list?api_key=' + apiToken + '&language=es-ES';
 
     const response = await fetch(apiUrl);
 

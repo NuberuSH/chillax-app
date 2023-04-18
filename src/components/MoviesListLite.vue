@@ -19,11 +19,15 @@ export default {
     setup() {
         const moviesList = ref([]);
         const page = ref()
+        const selectedGenre = ref();
+        const contentType = ref('movie');
         onMounted(async () => {
             try {
-                const response = await axios.get('/.netlify/functions/getMovies', {
+                const response = await axios.get('/.netlify/functions/getContent', {
                     params: {
                         page: page.value,
+                        selectedGenre: selectedGenre.value,
+                        contentType: contentType.value
                     }
                 });
                 page.value = response.data.page;

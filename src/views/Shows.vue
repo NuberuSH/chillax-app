@@ -1,17 +1,17 @@
 <template>
     <div>
-<TvShowsListLite></TvShowsListLite>
+<TvShowsList></TvShowsList>
     </div>
 </template>
 
 <script>
-import TvShowsListLite from '../components/TvShowsListLite.vue';
+import TvShowsListLite from '../components/TvShowsList.vue';
 
 export default {
     setup() {
         return {};
     },
-    components: { TvShowsListLite }
+    components: { TvShowsList }
 }
 </script>
 
