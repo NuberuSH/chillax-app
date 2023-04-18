@@ -1,16 +1,45 @@
 <template>
-    <div class="flex flex-col md:flex-row fixed bottom-0 left-0 w-full bg-gray-900 opacity-60">
-        <hr>
-          <p>© CHILLAX 2023</p>
-          <p class="api-disclaimer">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-          <img src="/images/logo/TMDB_long.svg" alt="Logo de TMDB" class="api-logo">
+    <div class="flex flex-col justify-center items-center fixed bottom-0 left-0 w-full max-h-11 bg-gray-900 opacity-50 font-montserrat text-xs font-light text-white">
+        <hr class="w-full m-0 p-0">
+          <p class="m-0 text-[0.6rem] ">© CHILLAX 2023</p>
+          <p class="api-disclaimer text-[0.5rem] transition duration-300 " :class="{
+            'hidden': scrolledY > 0 , 
+            'inline': scrolledY === 0 
+          }"> This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+          <img src="/images/logo/TMDB_long.svg" alt="Logo de TMDB" class="api-logo h-16 w-16 transition duration-300" :class="{
+            'hidden': scrolledY > 0 , 
+            'inline': scrolledY === 0 
+          }">
     </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+  import { reactive, toRefs, onMounted, onUnmounted } from 'vue';
+
+export default {
+  setup() {
+    const state = reactive({
+      scrolledY: 0,
+      isMenuOpen: false
+    });
+
+    const handleScroll = () => {
+      state.scrolledY = window.scrollY;
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
+    return {
+      ...toRefs(state)
+    };
+  }
+}
 </script>
 
 <style lang="scss" scoped>
