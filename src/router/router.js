@@ -5,7 +5,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      redirect: '/trending'
+    },
+    {
+      path: '/trending',
+      name: 'trending',
       component: () => import('../views/Trending.vue')
     },
     {
