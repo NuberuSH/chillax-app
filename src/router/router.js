@@ -30,7 +30,10 @@ const router = createRouter({
     },
     {
      path: '/detailedInfo/:contentType/:id',
-     props: true,
+      props: route => ({
+        id: Number(route.params.id),
+        contentType: String(route.params.contentType)
+      }),
      name: 'DetailedInfo',
      component: () => import('../views/DetailedInfo.vue')
     },
