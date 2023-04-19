@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <div class="container mb-20 mt-16">
+  <div class="mb-20 mt-24">
+    <div class="container">
       <div id="movies">
         <h2 class="section-title mb-5 text-3xl text-stone-300">Películas</h2>
         <MoviesListLite></MoviesListLite>
