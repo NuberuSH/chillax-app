@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import fetch from 'node-fetch';
 
 
 export const handler = async (event, context) => {
