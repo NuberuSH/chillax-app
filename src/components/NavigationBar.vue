@@ -17,13 +17,16 @@
       </div>
       <div class="hidden md:flex text-white text-shadow-0">
         <router-link to="/" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4" >
-          Catálogo
-        </router-link>
-        <router-link to="/movies" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4">
           Trending
         </router-link>
         <router-link to="/movies" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4">
-          Sobre nosotros
+          Películas
+        </router-link>
+        <router-link to="/shows" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4">
+            Series
+          </router-link>
+        <router-link to="/about" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4">
+          Nosotros
         </router-link>
       </div>
       <div class="flex md:hidden">
@@ -50,31 +53,34 @@
               <div class="mt-6">
                 <nav class="grid gap-y-8">
                   <router-link to="/" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
-                    <span class="ml-3 text-base font-bold text-gray-900">Catálogo</span>
-                  </router-link>
-                  <router-link to="/construction/construction.html" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
                     <span class="ml-3 text-base font-bold text-gray-900">Trending</span>
                   </router-link>
-                  <router-link to="/about" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
-                    <span class="ml-3 text-base font-bold text-gray-900">About</span>
+                  <router-link to="/movies" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
+                    <span class="ml-3 text-base font-bold text-gray-900">Películas</span>
                   </router-link>
+                  <router-link to="/shows" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
+                    <span class="ml-3 text-base font-bold text-gray-900">Series</span>
+                  </router-link>
+                  <router-link to="/about" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
+                      <span class="ml-3 text-base font-bold text-gray-900">Nosotros</span>
+                    </router-link>
                 </nav>
-                <div class="flex gap-5 px-6 justify-center self-end">
-                    <a aria-label="Link to our instagram" href="https://www.instagram.com/chillax.today/" target="_blank">
-                      <img class="social filter black h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
-                        src="/images/icons/instagram.svg" alt="" />
-                    </a>
-                    <a aria-label="Link to our twitter" href="https://twitter.com/chillax_today" target="_blank">
-                      <img class="social filter black h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
-                        src="/images/icons/twitter.svg" alt="" />
-                    </a>
-                    <a aria-label="Link to our facebook" href="https://www.facebook.com/profile.php?id=100091128542122"
-                      target="_blank">
-                      <img class="social filter black h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
-                        src="/images/icons/facebook.svg" alt="" />
-                    </a>
-                </div>
               </div>
+              <div class="flex gap-5 px-6 justify-center mt-10">
+                      <a aria-label="Link to our instagram" href="https://www.instagram.com/chillax.today/" target="_blank">
+                        <img class="social filter black h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+                          src="/images/icons/instagram.svg" alt="" />
+                      </a>
+                      <a aria-label="Link to our twitter" href="https://twitter.com/chillax_today" target="_blank">
+                        <img class="social filter black h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+                          src="/images/icons/twitter.svg" alt="" />
+                      </a>
+                      <a aria-label="Link to our facebook" href="https://www.facebook.com/profile.php?id=100091128542122"
+                        target="_blank">
+                        <img class="social filter black h-6 cursor-pointer hover:scale-105 duration-500 ease-in-out"
+                          src="/images/icons/facebook.svg" alt="" />
+                      </a>
+                  </div>
             </div>
           </div>
         </transition>

@@ -4,12 +4,12 @@
       <h2 class="section-title">Películas</h2>
       <hr>
       <MoviesListLite></MoviesListLite>
-      <router-link :to="{ name: 'movies' }" class="show-more">Mostrar más películas</router-link>
+      <router-link to="/movies" class="show-more">Mostrar más películas</router-link>
     <div id="series">
        <h2 class="section-title">Series</h2>
        <hr>
        <TvShowsListLite></TvShowsListLite>
-       <router-link :to="{ name: 'shows'}" class="show-more">Mostrar más series</router-link>
+       <router-link to="/shows" class="show-more">Mostrar más series</router-link>
      </div>
     </div>
   </div>
