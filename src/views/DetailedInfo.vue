@@ -5,7 +5,7 @@
         <h1 class="text-3xl text font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1">{{ contentData.title }}</h1>
         <hr class="w-4/5 self-center"/>
         <div class="flex flex-col md:flex-row ml-0 md:ml-10 justify-center mt-4">
-          <img :src="'https://image.tmdb.org/t/p/w500' + contentData.poster_path" :alt="'Portada de la película ' + contentData.title" 
+          <img v-if="contentData.poster_path" :src="'https://image.tmdb.org/t/p/w500' + contentData.poster_path" :alt="'Portada de la película ' + contentData.title" 
                 class="mt-5 mb-4 w-1/2 h-full md:w-1/5 md:h-1/4 rounded-lg self-center md:self-center sm:mb-7">
           <div id="info-body" class="flex flex-col ml-0 sm:ml-20 md:ml-10 self-center w-4/5 md:w-3/5 md:text-left sm:text-center md:text-xl">
             <div class="additional-info self-center w-4/5 h-max-content md:mb-3.5">
@@ -23,20 +23,33 @@
             <h1 class="text-3xl text font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1">{{ contentData.name }}</h1>
             <hr class="w-4/5 self-center"/>
             <div class="flex flex-col md:flex-row ml-0 md:ml-10 justify-center mt-4">
-              <img :src="'https://image.tmdb.org/t/p/w500' + contentData.poster_path" :alt="'Portada de la película ' + contentData.name" 
+              <img v-if="contentData.poster_path" :src="'https://image.tmdb.org/t/p/w500' + contentData.poster_path" :alt="'Portada de la película ' + contentData.name" 
                     class="mt-5 mb-4 w-1/2 h-full md:w-1/5 md:h-1/4 rounded-lg self-center md:self-center sm:mb-7">
               <div id="info-body" class="flex flex-col ml-0 sm:ml-20 md:ml-10 self-center w-4/5 md:w-3/5 md:text-left sm:text-center md:text-xl">
                 <div class="additional-info self-center w-4/5 h-max-content md:mb-3.5">
-                  <p class="self-end w-400 leading-230">Fecha de primera emisión: {{ contentData.first_air_date }}</p>
-                  <p class="self-end w-400 leading-230">Fecha de última emisión: {{ contentData.last_air_date }}</p>
-                  <p class="self-end w-400 leading-230">Temporadas: {{ contentData.number_of_seasons }}</p>
-                  <p class="self-end w-400 leading-230">Capítulos en total: {{ contentData.number_of_episodes }}</p>
+                  <p class="self-end w-400 leading-230">Fecha de primera emisión: <span v-if="!contentData.first_air_date">No hay datos disponibles</span>{{ contentData.first_air_date }}</p>
+                  <p class="self-end w-400 leading-230">Fecha de última emisión: <span v-if="!contentData.last_air_date">No hay datos disponibles</span>{{ contentData.last_air_date }}</p>
+                  <p class="self-end w-400 leading-230">Temporadas: <span v-if="!contentData.number_of_seasons">No hay datos disponibles</span>{{ contentData.number_of_seasons }}</p>
+                  <p class="self-end w-400 leading-230">Capítulos en total: <span v-if="!contentData.number_of_episodes">No hay datos disponibles</span>{{ contentData.number_of_episodes }}</p>
+                  <p class="self-end w-400 leading-230">
+                    Género: <span v-if="contentData.genres === undefined">
+                                No hay datos disponibles
+                            </span>
+                            <span v-else>
+                                <template v-for="(genre, index) in contentData.genres" :key="genre.id">
+                                   <span >{{ genre.name }}</span>
+                                   <span v-if="index < contentData.genres.length - 1">, </span>
+                                   <span v-else>. </span>
+                                 </template>
+                                </span>
+                </p>
                 </div>
-                <div class="sinopsis md:mx-auto md:w-4/5 leading-230 md:mt-2/5 sm:w-4/5 mt-5 sm:self-start ml-0 mb-8">{{ contentData.overview }}
+                <div class="sinopsis md:mx-auto md:w-4/5 leading-230 md:mt-2/5 sm:w-4/5 mt-5 sm:self-start ml-0 mb-8">Sinopsis: <span v-if="!contentData.overview">No hay datos disponibles</span> <span v-if="contentData.overview"> {{ contentData.overview }}</span>
                 </div>      
               </div>
             </div>
         </div>
+
 </template>
 
 <script>
@@ -91,6 +104,7 @@ export default {
         console.log('es serie', whatType.isTvShow);
         const isMovie = whatType.isMovie;
         const isTvShow = whatType.isTvShow;
+        console.log('el valor de genres.name es', contentData);
 
 
         return {
