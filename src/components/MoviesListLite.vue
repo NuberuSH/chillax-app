@@ -1,7 +1,7 @@
 <template>
     <div>
        <div id="series-list">
-         <router-link v-for="movie in moviesList" :key="movie.id" class="movie" :to="{ name: 'home', params: {id: movie.id}}">
+         <router-link v-for="movie in moviesList" :key="movie.id" class="movie" :to="{ name: 'detailedInfo', params: { id: movie.id, contentType: 'movie' } }">
            <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="`Poster of the movie: ${movie.name}`">
            <div class="movie-footer">
              <div>{{ movie.title }}</div>
