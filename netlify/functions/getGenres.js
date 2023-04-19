@@ -1,7 +1,7 @@
-const axios = require("axios");
+import axios from 'axios';
 
 
-const handler = async (event, context) => {
+export const handler = async (event, context) => {
   try {
     const apiToken = process.env.TMDB_API_KEY;
     const contentType = event.queryStringParameters.contentType;
@@ -21,5 +21,3 @@ const handler = async (event, context) => {
     };
   }
 };
-
-module.exports = { handler };
