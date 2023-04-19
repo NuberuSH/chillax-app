@@ -1,10 +1,10 @@
 <template>
     <div v-if="contentData">
 
-        <div v-if="isMovie" class="boxShadow w-4/5 mt-28 mb-24 mx-auto rounded-xl bg-web-card text-white shadow-3xl flex flex-col self-center sm:h-fit">
+        <div v-if="isMovie" class="boxShadow w-4/5 mt-24 mb-24 mx-auto rounded-xl bg-web-card text-white shadow-3xl flex flex-col self-center sm:h-fit">
             <div class='go-back hover:bg-web-boton2 w-fit py-1 px-2 text-xl cursor-pointer rounded-md inline-block shadow-lg ml-4 mt-4'
                >Volver atrás</div>
-            <h1 class="text-3xl text font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1">{{ contentData.title }}</h1>
+            <h1 class="text-3xl text-center overflow-ellipsis h-auto font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1">{{ contentData.title }}</h1>
             <hr class="w-4/5 self-center"/>
             <div class="flex flex-col md:flex-row ml-0 md:ml-10 justify-center mt-4">
               <img v-if="contentData.poster_path" :src="'https://image.tmdb.org/t/p/w500' + contentData.poster_path" :alt="'Portada de la película ' + contentData.title" 
@@ -19,10 +19,10 @@
               </div>
             </div>
         </div>
-            <div v-if="isTvShow" class="boxShadow w-4/5 mt-36 mb-36 mx-auto rounded-xl bg-web-card text-white shadow-3xl flex flex-col self-center sm:h-fit">
+            <div v-if="isTvShow" class="boxShadow w-4/5 mt-24 mb-24 mx-auto rounded-xl bg-web-card text-white shadow-3xl flex flex-col self-center sm:h-fit">
                 <div class='go-back hover:bg-web-boton2 w-fit py-1 px-2 text-xl cursor-pointer rounded-md inline-block shadow-lg ml-4 mt-4'
                 >Volver atrás</div>
-                <h1 class="text-3xl text font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1">{{ contentData.name }}</h1>
+                <h1 class="text-3xl text-center overflow-ellipsis h-auto font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1">{{ contentData.name }}</h1>
                 <hr class="w-4/5 self-center"/>
                 <div class="flex flex-col md:flex-row ml-0 md:ml-10 justify-center mt-4">
                   <img v-if="contentData.poster_path" :src="'https://image.tmdb.org/t/p/w500' + contentData.poster_path" :alt="'Portada de la película ' + contentData.name" 
@@ -34,7 +34,7 @@
                       <p class="self-end w-400 leading-230">Temporadas: <span v-if="!contentData.number_of_seasons">No hay datos disponibles</span>{{ contentData.number_of_seasons }}</p>
                       <p class="self-end w-400 leading-230">Capítulos en total: <span v-if="!contentData.number_of_episodes">No hay datos disponibles</span>{{ contentData.number_of_episodes }}</p>
                       <p class="self-end w-400 leading-230">
-                        Género: <span v-if="contentData.genres === undefined">
+                        Género/s: <span v-if="contentData.genres === undefined">
                                     No hay datos disponibles
                                 </span>
                                 <span v-else>
