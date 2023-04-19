@@ -32,7 +32,6 @@ export default {
                 });
                 page.value = response.data.page;
                 moviesList.value = response.data.results.slice(0, 6);
-                moviesList.results.genre_ids = response.data.results.genre_ids.slice(0, 6);
             } catch (error) {
                 console.error(error);
             }
