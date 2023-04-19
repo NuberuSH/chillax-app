@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import axios from 'axios';
 
 
 export const handler = async (event, context) => {
@@ -7,13 +7,7 @@ export const handler = async (event, context) => {
     const contentType = event.queryStringParameters.contentType;
     const apiUrl = 'https://api.themoviedb.org/3/genre/' + contentType + '/list?api_key=' + apiToken + '&language=es-ES';
 
-    const response = await fetch(apiUrl);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
-
-    const data = await response.json();
+    const {data} = await axios.get(apiUrl);
 
     return {
       statusCode: 200,
