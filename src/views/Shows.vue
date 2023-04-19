@@ -1,6 +1,6 @@
 <template>
     <div class="mt-36">
-        <select v-model="selectedGenre">
+        <select v-model="selectedGenre" class="text-stone-300 text-sm font-light bg-web-bgCard p-2 rounded mb-10 hover:text-white">
             <option selected disabled hidden value="">Selecciona un género</option>
             <option value="">Todos</option>
             <option v-for="genre in genreList" :value="genre.id" :key="genre.id" >
