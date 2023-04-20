@@ -4,7 +4,7 @@
             'hidden': scrolledY < 700,
             'block' : scrolledY > 700
         }">
-        <img src="/images/icons/scroll.svg" alt="scroll button">
+        <img src="/images/icons/scroll.svg" aria-label="scroll top button">
     </button>
     </div>
 </template>
