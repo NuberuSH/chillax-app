@@ -13,13 +13,14 @@
         <br> <strong class="text-xs">* Dale al play si quieres saber más sobre nosotros</strong>
       </p>
       <hr class="mx-1 my-3 border-gray-300">
-      <div class="grid md:grid-cols-5 gap-30 mt-25 font-semibold text-center grid-cols-2 text-gray-200 self-center">
+      <div class="grid md:grid-cols-5 gap-30 mt-25 font-semibold text-center grid-cols-1 text-gray-200 self-center">
         <figure v-for="(member, index) in members" :key="member.name">
           <img :class="'img' + (index + 1)" :src="'/images/profilepic/' + member.image" :alt="member.name">
           <figcaption>{{ member.name }} <br> {{ member.surname }}
             <div class="additional-content">
-              <button class="hover:rotate-90 duration-300" @click="seeMoreButton(index)">
-                <img class=" h-14 w-14 " src="/images/logo/play.svg" alt="Ver más">
+              <button class="focus:rotate-90 duration-300 transform transition" @click="seeMoreButton(index)" :class="{
+                'rotate-90': isButtonClicked}" @mousedown="isButtonClicked = true" @mouseup="isButtonClicked = false">
+                <img class="h-10 w-10" src="/images/logo/play2.svg" alt="Ver más">
               </button>
               <div class=" text-adittional " v-show="member.showText" ref="moreText">
                 <p class="text-xm font-light text-white mx-2 p-2">{{ member.description }}</p>
@@ -42,7 +43,7 @@ export default {
         {
           name: 'Carla',
           surname: 'Gómez Abad',
-          image: 'carla.png',
+          image: 'carla.webp',
           description: 'Soy una profesional polivalente con más de siete años de experiencia atendiendo al público. Siempre me ha llamado la atención el mundo de la programación.',
           linkedin: 'https://www.linkedin.com/in/cgabad/',
           showText: false
@@ -50,7 +51,7 @@ export default {
         {
           name: 'Adrián',
           surname: 'Jiménez Fernández',
-          image: 'Adri.png',
+          image: 'Adri.webp',
           description: 'He finalizado recientemente un C.S. de Desarrollo de Aplicaciones Web, me encanta el desafío que presenta el trabajo en este campo.',
           linkedin: 'https://www.linkedin.com/in/adrian-jimenez-fernandez/',
           showText: false
@@ -58,7 +59,7 @@ export default {
         {
           name: 'Patricia',
           surname: 'Samudio Cabrera',
-          image: 'patri.png',
+          image: 'patri.webp',
           description: 'Después de más de cinco años trabajando en el sector del diseño y el calzado, busco nuevos retos de aprendizaje en el Desarrollo Web.',
           linkedin: 'https://www.linkedin.com/in/patriciasamudiocabrera/',
           showText: false
@@ -66,20 +67,20 @@ export default {
         {
           name: 'Daniel',
           surname: 'Tallón Ortega',
-          image: 'dani2.png',
-          description: 'He estudiado A.S.I. y también he completado un curso de desarrollo Fullstack. Me gusta mantenerme actualizado con las últimas tendencias en informática.',
+          image: 'dani2.webp',
+          description: 'He estudiado A.S.I.R. y también he completado un curso de desarrollo Fullstack. Me gusta mantenerme actualizado con las últimas tendencias en informática.',
           linkedin: 'https://linkedin.com/in/daniel-tallon/',
           showText: false
         },
         {
           name: 'Rosa',
           surname: 'Jiménez Martínez',
-          image: 'rosa.png',
+          image: 'rosa.webp',
           description: 'Anteriormente me dedicaba a la cocina, pero me di cuenta de que mi verdadera pasión es el mundo de la tecnología. Ahora estoy enfocada en mejorar mis habilidades en el desarrollo web.',
           linkedin: 'https://www.linkedin.com/in/rosa-jiménez-martínez-915170256/',
           showText: false
         },
-      ]
+      ],
     }
   },
   methods: {
@@ -92,7 +93,8 @@ export default {
         const moreTextElement = this.$refs.moreText[index];
         moreTextElement.scrollIntoView({ behavior: 'smooth' });
       });
-    }
+    },
+    
   }
 };
 </script>
