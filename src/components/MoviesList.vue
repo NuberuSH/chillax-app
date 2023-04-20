@@ -1,21 +1,29 @@
 <template>
-    <div>
+    <div v-if="!isError">
+        <LoadingScreen v-if="isLoading"></LoadingScreen>
         <div id="movie-list" class="grid grid-cols-5 gap-5 mb-7 max-[600px]:grid-cols-2 max-[800px]:grid-cols-3 max-[900px]:mr-5 max-[750px]:mr-6">
-            <router-link v-for="movie in moviesList" class="movie mb-2 rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :key="movie.id"
+            <router-link v-for="movie in moviesList" class="movie flex flex-col mb-2 rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :key="movie.id"
                 :to="{ name: 'detailedInfo', params: { id: movie.id, contentType: 'movie' } }">
-                <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"
-                    :alt="`Poster of the movie: ${movie.name}`" />
-                <div class="movie-footer">
-                    <div class="p-3">{{ movie.title }}</div>
-                </div>
+                     <img v-if="movie.poster_path" :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"
+                         :alt="`Poster de la película: ${movie.name}`" class="rounded-t-lg aspect-[5/8]">
+                     <img v-else src="/images/icons/no-disponible.webp" class="rounded-t-lg aspect-[5/8]">
+                     <div class="flex justify-center items-center">
+                         <div class="p-3">{{ movie.title }}</div>
+                     </div>
             </router-link>
             <div ref="lastMovieRef"></div>
         </div>
+    </div>
+    <div v-else>
+        <ErrorLoading></ErrorLoading>
+
     </div>
 </template>
 <script>
 import { ref, onMounted, watch } from 'vue';
 import axios from 'axios';
+import ErrorLoading from '../components/ErrorLoading.vue';
+import LoadingScreen from '../components/LoadingScreen.vue';
 
 export default {
     props: {
@@ -30,6 +38,8 @@ export default {
         const selectedGenre = ref(props.selectedGenre);
         const contentType = ref('movie');
         const lastMovieRef = ref();
+        const isLoading = ref(true);
+        const isError = ref(false);
         let observer;
 
         // Initial batch request
@@ -44,8 +54,10 @@ export default {
                 });
                 page.value = response.data.page;
                 moviesList.value = [...moviesList.value, ...response.data.results];
+                isLoading.value = false;
             } catch (error) {
                 console.error(error);
+                isError.value = true;
             }
         };
 
@@ -68,6 +80,7 @@ export default {
             () => props.selectedGenre,
             async (newValue, oldValue) => {
                 if (newValue !== oldValue) {
+                    isLoading.value = true;
                     page.value = 1;
                     selectedGenre.value = newValue;
                     moviesList.value = [];
@@ -76,11 +89,16 @@ export default {
             }
         );
 
+        
+
         return {
             moviesList,
-            lastMovieRef
+            lastMovieRef,
+            isLoading,
+            isError,
         };
-    }
+    },
+    components: { LoadingScreen, ErrorLoading, LoadingScreen }
 };
 </script>
 <style scoped></style>
