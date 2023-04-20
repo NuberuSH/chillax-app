@@ -1,8 +1,10 @@
 <template>
-    <div>
+    <div v-if="!isError">
+        <LoadingScreen v-if="isLoading"></LoadingScreen>
        <div id="series-list" class="grid grid-cols-5 gap-5 mb-7 max-[600px]:grid-cols-2 max-[800px]:grid-cols-3 max-[900px]:mr-5 max-[750px]:mr-6">
-         <router-link v-for="tvShow in tvShowsList" :key="tvShow.id" class="tvShow mb-2 rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :to="{ name: 'detailedInfo', params: {id: tvShow.id, contentType: 'tv'}}">
-           <img :src="`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`" :alt="`Poster of the movie: ${tvShow.name}`">
+         <router-link v-for="tvShow in tvShowsList" :key="tvShow.id" class="tvShow flex flex-col mb-2 rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :to="{ name: 'detailedInfo', params: {id: tvShow.id, contentType: 'tv'}}">
+            <img v-if="tvShow.poster_path" :src="`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`" :alt="`Poster de la serie: ${tvShow.name}`" class="rounded-t-lg aspect-[5/8]">
+            <img v-else src="/images/icons/no-disponible.webp" class="rounded-t-lg aspect-[5/8]">
            <div class="movie-footer">
              <div class="p-3">{{ tvShow.name }}</div>
            </div>
@@ -10,11 +12,17 @@
          <div ref="lastShowRef"></div>
        </div>
     </div>
+        <div v-else>
+            <ErrorLoading></ErrorLoading>
+
+        </div>
 </template>
 
 <script>
 import { ref, onMounted, watch } from 'vue';
 import axios from 'axios';
+import LoadingScreen from '../components/LoadingScreen.vue';
+import ErrorLoading from '../components/ErrorLoading.vue';
 
 export default {
     props: {
@@ -29,6 +37,8 @@ export default {
         const selectedGenre = ref(props.selectedGenre);
         const contentType = ref('tv');
         const lastShowRef = ref();
+        const isLoading = ref(true);
+        const isError = ref(false);
         let observer;
 
 
@@ -43,8 +53,10 @@ export default {
                 });
                 page.value = response.data.page;
                 tvShowsList.value = [...tvShowsList.value, ...response.data.results];
+                isLoading.value = false;
             } catch (error) {
                 console.error(error);
+                isError.value = true;
             }
         };
 
@@ -67,6 +79,7 @@ export default {
             () => props.selectedGenre,
             async (newValue, oldValue) => {
                 if (newValue !== oldValue) {
+                    isLoading.value = true;
                     page.value = 1;
                     selectedGenre.value = newValue;
                     tvShowsList.value = [];
@@ -77,9 +90,12 @@ export default {
 
         return {
             tvShowsList,
-            lastShowRef
+            lastShowRef,
+            isLoading,
+            isError
         };
     },
+    components: { LoadingScreen, ErrorLoading }
 };
 </script>
 

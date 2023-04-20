@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center items-center fixed bottom-0 left-0 w-full max-h-11 bg-zinc-900 font-montserrat text-xs font-light text-white transition duration-300"
+    <div class="flex flex-col justify-center items-center fixed bottom-0 left-0 w-full max-h-11 bg-zinc-900 font-montserrat text-xs font-light text-white transition duration-300 z-50"
          :class="{
             'opacity-60': scrolledY > 0,
             'opacity-100': scrolledY === 0
