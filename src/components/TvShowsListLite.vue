@@ -1,10 +1,10 @@
 <template>
     <div>
-       <div id="series-list">
-         <router-link v-for="tvShow in tvShowsList" :key="tvShow.id" class="tvShow" :to="{ name: 'detailedInfo', params: { id: tvShow.id, contentType: 'tv' } }">
+       <div id="series-list" class="grid grid-cols-6 gap-5 mb-7">
+         <router-link v-for="tvShow in tvShowsList" :key="tvShow.id" class="tvShow rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :to="{ name: 'detailedInfo', params: { id: tvShow.id, contentType: 'tv' } }">
            <img :src="`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`" :alt="`Poster of the movie: ${tvShow.name}`">
            <div class="movie-footer">
-             <div>{{ tvShow.name }}</div>
+             <div class="p-3">{{ tvShow.name }}</div>
            </div>
          </router-link>
        </div>

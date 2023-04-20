@@ -18,7 +18,8 @@ module.exports = {
           custom2: "#511281",
           custom3: "#4CA1A3",
           custom4: "#A5E1AD",
-          navbar: "#510d0d"
+          navbar: "#510d0d",
+          bgCard: "#222"
         }
       },
 
