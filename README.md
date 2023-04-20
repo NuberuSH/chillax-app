@@ -12,7 +12,10 @@ Nuestro principal objetivo es que el usuario encuentre los films más populares 
 
 ## 🎥 Demo
 
-[Chillax](https://chillax.today/)
+[Chillax - Landing](https://chillax.today/)
+
+[Chillax - App](https://app.chillax.today/)
+
 
 
 ## 🎥 Si quieres conocer más, visita nuestra web
@@ -27,35 +30,37 @@ Nuestro principal objetivo es que el usuario encuentre los films más populares 
 3. Tailwind: para los estilos.
 3. API de TMDB para la información de películas.
 4. Netlify para el despliegue.
-5. Photoshop e Illustrator para el logo y modificar el formato de las imágenes (svg y webp).
+5. Git para el control de versiones.
+6. Photoshop e Illustrator para el logo y modificar el formato de las imágenes (svg y webp).
 
 
 
 ## ✅ Optimización
 SEO, Accesibilidad, Buenas prácticas.
+___
 <img src="/public/images/background/image.png" alt="App Screenshot - optimizacion" width="500">
 
-## Autores y Enlace a Github
+## 🤖🐱 Autores
 
-- 👨🏻‍💻Daniel Tallón Ortega.
-[@NuberuSH](https://github.com/NuberuSH)
+- [👨🏻‍💻Daniel Tallón Ortega](https://github.com/NuberuSH)
 
-- 👩🏻‍💻Patricia Samudio Cabrera.
-[@PatriSamudio](https://github.com/PatriSamudio)
+- [👩🏻‍💻Patricia Samudio Cabrera](https://github.com/PatriSamudio)
 
-- 👨🏻‍💻AdriánJiménez Fernández.
-[@adrijimdev](https://github.com/adrijimdev)
+- [👨🏻‍💻AdriánJiménez Fernández](https://github.com/adrijimdev)
 
-- 👩🏻‍💻Carla Gómez Abad.
-[@CarlaJfry](https://github.com/CarlaJfry)
+- [👩🏻‍💻Carla Gómez Abad](https://github.com/CarlaJfry)
 
-- 👩🏻‍💻Rosa Jiménez Martínez.
-[@Rosawaii](https://github.com/Rosawaii)
+- [👩🏻‍💻Rosa Jiménez Martínez](https://github.com/Rosawaii)
 
 
 ## 📝Comentarios y Sugerencias
 
 Si tiene algún comentario o sugerencia, estaremos encantados de oirla, por favor comuníquese con nosotros en 📧 chillaxandrelax@outlook.es
 
+## Código Fuente
+
+
+[🌍 Landing](https://github.com/NuberuSH/chillax)
+[📲 App](https://github.com/NuberuSH/chillax-app)
 
 
