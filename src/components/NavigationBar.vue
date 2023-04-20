@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed left-0 top-0 w-full z-10 transition duration-300" :class="{
+  <nav class="fixed left-0 top-0 w-full z-50 transition duration-300" :class="{
     'bg-web-navbar opacity-95 py-1 px-4 border-b': scrolledY > 0,
     'py-1 px-6': scrolledY === 0
   }">
