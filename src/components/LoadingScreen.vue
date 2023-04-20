@@ -1,5 +1,5 @@
 <template>
-    <div class="inset-0 fixed flex w-full h-full items-center justify-center duration-300 transition-opacity z-10">
+    <div class="inset-0 fixed flex w-full h-full bg-[#333] items-center justify-center duration-300 transition-opacity z-10">
       <div class="flex-col">
         <x-loading class="w-24 h-24">
           <svg viewBox="0 0 860.1 876.5">
@@ -51,10 +51,12 @@
         </div>
         
       </div>
-    </div>
+
+</div>
 </template>
 
 <script>
+
 
 </script>
 
