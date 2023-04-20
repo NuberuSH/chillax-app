@@ -8,7 +8,7 @@
       'py-1': scrolledY === 0
     }">
       <div class="flex items-center">
-        <a href="https://chillax.today" target="_blank">
+        <a href="https://chillax.today" target="_self" rel="author">
         <img class="w-auto duration-300" src="/images/logo/chillaxSombras.svg" :class="{
           'md:h-[60px] h-[35px]': scrolledY > 0,
           'md:h-[70px] h-[50px]': scrolledY === 0
@@ -53,7 +53,7 @@
               <div class="mt-6">
                 <nav class="grid gap-y-8">
                   <router-link to="/" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
-                    <span class="ml-3 text-base font-bold text-gray-900">Trending</span>
+                    <span class="ml-3 text-base font-bold text-gray-900">Tendencias</span>
                   </router-link>
                   <router-link to="/movies" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
                     <span class="ml-3 text-base font-bold text-gray-900">Películas</span>
