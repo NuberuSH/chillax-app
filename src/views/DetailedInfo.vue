@@ -93,6 +93,9 @@ export default {
                 console.log('si');
                 console.log('aqui vale', contentExists);
             } catch (error) {
+                setTimeout(() => {
+                    isLoading.value = false;
+                }, 1000);
             }
         });
 
