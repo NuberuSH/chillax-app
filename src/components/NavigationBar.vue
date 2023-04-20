@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed left-0 top-0 w-full z-10 transition duration-300" :class="{
+  <nav class="fixed left-0 top-0 w-full z-50 transition duration-300" :class="{
     'bg-web-navbar opacity-95 py-1 px-4 border-b': scrolledY > 0,
     'py-1 px-6': scrolledY === 0
   }">
@@ -8,7 +8,7 @@
       'py-1': scrolledY === 0
     }">
       <div class="flex items-center">
-        <a href="https://chillax.today" target="_blank">
+        <a href="https://chillax.today" target="_self" rel="author">
         <img class="w-auto duration-300" src="/images/logo/chillaxSombras.svg" :class="{
           'md:h-[60px] h-[35px]': scrolledY > 0,
           'md:h-[70px] h-[50px]': scrolledY === 0
@@ -53,7 +53,7 @@
               <div class="mt-6">
                 <nav class="grid gap-y-8">
                   <router-link to="/" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
-                    <span class="ml-3 text-base font-bold text-gray-900">Trending</span>
+                    <span class="ml-3 text-base font-bold text-gray-900">Tendencias</span>
                   </router-link>
                   <router-link to="/movies" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
                     <span class="ml-3 text-base font-bold text-gray-900">Películas</span>
