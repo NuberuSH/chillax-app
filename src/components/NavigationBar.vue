@@ -53,10 +53,10 @@
               <div class="mt-6">
                 <nav class="grid gap-y-8">
                   <router-link to="/" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
-                    <span class="ml-3 text-base font-bold text-gray-900">TENDENCIAS</span>
+                    <span class="ml-3 text-base font-bold text-gray-900">Tendencias</span>
                   </router-link>
                   <router-link to="/movies" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
-                    <span class="ml-3 text-base font-bold text-gray-900">PELÍCULAS</span>
+                    <span class="ml-3 text-base font-bold text-gray-900">Películas</span>
                   </router-link>
                   <router-link to="/shows" @click="isMenuOpen = false" type="button" class="-m-3 p-3 flex items-center hover:bg-gray-100 transition ease-in-out duration-150">
                     <span class="ml-3 text-base font-bold text-gray-900">Series</span>
