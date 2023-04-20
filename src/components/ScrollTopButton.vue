@@ -1,10 +1,10 @@
 <template>
     <div>
-        <button @click="scrollToTop" id="scroll-top-button" class="fixed right-2 bottom-11 px-3 py-1 hover:px-4 hover:py-2 bg-web-boton rounded-md z-5 transition duration-75" :class="{
+        <button @click="scrollToTop" id="scroll-top-button" class="fixed right-0.5 bottom-2  focus:animate-bounce z-5 w-14 h-14" :class="{
             'hidden': scrolledY < 700,
             'block' : scrolledY > 700
         }">
-        ⬆
+        <img src="/images/icons/scroll.svg" class="">
     </button>
     </div>
 </template>
@@ -48,3 +48,4 @@ export default {
 <style lang="scss" scoped>
 
 </style>
+
