@@ -1,29 +1,25 @@
 <template>
   <div>
-    <div id="container"
-      class="max-w-screen-7xl flex flex-col w-full h-full bg-web-fondoAbout font-montserrat text-lg font-light text-white mx-auto p-4">
-      <h1 class="block self-center text-3xl font-bold my-2 max-w-max text-gray-200 text-shadow mb-5">Los Linces</h1>
+    <div id="container" 
+    class="max-w-screen-7xl flex flex-col w-full h-full font-montserrat text-lg font-light text-white mb-6 p-4 overflow-x-hidden">
+      <h1 class="block self-center text-3xl font-bold mb-5 mt-20 max-w-max text-gray-200 text-shadow ">Los Linces</h1>
       <p class="text-center text-gray-200 text-shadow text-base lg:text-lg mb-5">"Somos un grupo de cinco
         programadores* apasionados y trabajadores, siempre en busca de nuevos desafíos y aventuras
         emocionantes. Desde el principio, hemos puesto todo nuestro empeño en conseguir un buen resultado,
-        basándonos en
-        la comunicación y el debate continuo para alcanzar el objetivo de nuestra página. Al igual que un lince en
-        el
-        bosque, este grupo posee una aguda percepción y una gran habilidad para adaptarse al entorno y enfrentar
-        nuevos
-        desafíos, lo que nos permite tener éxito en nuestras misiones. Porque no es lo que hacemos, es lo que
-        somos."
+        basándonos en la comunicación y el debate continuo para alcanzar el objetivo de nuestra página. Al igual 
+        que un lince en el bosque, este grupo posee una aguda percepción y una gran habilidad para adaptarse al 
+        entorno y enfrentar nuevos desafíos, lo que nos permite tener éxito en nuestras misiones.
+         Porque no es lo que hacemos, es lo que somos."
         <br> <strong class="text-xs">* Dale al play si quieres saber más sobre nosotros</strong>
       </p>
       <hr class="mx-1 my-3 border-gray-300">
-
       <div class="grid md:grid-cols-5 gap-30 mt-25 font-semibold text-center grid-cols-2 text-gray-200 self-center">
         <figure v-for="(member, index) in members" :key="member.name">
           <img :class="'img' + (index + 1)" :src="'/images/profilepic/' + member.image" :alt="member.name">
           <figcaption>{{ member.name }} <br> {{ member.surname }}
             <div class="additional-content">
-              <button class="hover:green-500" @click="seeMoreButton(index)">
-                <img class="hover:rotate-90 delay-200 duration-300 h-14 w-14 " src="/images/logo/play.svg" alt="Ver mÃ¡s">
+              <button class="hover:rotate-90 duration-300" @click="seeMoreButton(index)">
+                <img class=" h-14 w-14 " src="/images/logo/play.svg" alt="Ver más">
               </button>
               <div class=" text-adittional " v-show="member.showText" ref="moreText">
                 <p class="text-xm font-light text-white mx-2 p-2">{{ member.description }}</p>
@@ -101,10 +97,6 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-#container {
-  width: 100%;
-  margin: 0 auto;
-  background-color: rgb(45, 45, 45);
-}
+<style>
+
 </style>
