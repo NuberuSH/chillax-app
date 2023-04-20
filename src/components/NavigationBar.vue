@@ -34,9 +34,9 @@
           class="bg-gray-400 opacity-50 inline-flex items-center justify-center rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition ease-in-out duration-300" :class="{
             'p-1.5': scrolledY > 0,
             'p-2': scrolledY === 0
-          }">
+          }" aria-label="open menu button">
           <img class="menu-button md:hidden cursor-pointer my-auto h-[30px] black" src="/images/icons/menu.svg"
-            alt="">
+            alt="menu icon">
         </button>
         <transition enter-active-class="transition ease-out duration-100 transform translate-x-full right-0" enter-class="opacity-0"
       enter-to-class="opacity-100 translate-x-0" leave-active-class="transition ease-in duration-100 transform translate-x-0"
