@@ -17,7 +17,7 @@
       </div>
       <div class="hidden md:flex text-white text-shadow-0">
         <router-link to="/" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4" >
-          Trending
+          Tendencias
         </router-link>
         <router-link to="/movies" class=" transition duration-200 ease-in-out hover:text-web-boton mx-4">
           Películas
