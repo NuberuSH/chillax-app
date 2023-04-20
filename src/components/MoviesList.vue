@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="movie-list" class="grid grid-cols-5 gap-5 mb-7 max-[600px]:grid-cols-2 max-[800px]:grid-cols-3">
+        <div id="movie-list" class="grid grid-cols-5 gap-5 mb-7 max-[600px]:grid-cols-2 max-[800px]:grid-cols-3 max-[900px]:mr-5 max-[750px]:mr-6">
             <router-link v-for="movie in moviesList" class="movie mb-2 rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :key="movie.id"
                 :to="{ name: 'detailedInfo', params: { id: movie.id, contentType: 'movie' } }">
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"

@@ -1,6 +1,6 @@
 <template>
     <div>
-       <div id="series-list" class="grid grid-cols-5 gap-5 mb-7 max-[600px]:grid-cols-2 max-[800px]:grid-cols-3">
+       <div id="series-list" class="grid grid-cols-5 gap-5 mb-7 max-[600px]:grid-cols-2 max-[800px]:grid-cols-3 max-[900px]:mr-5 max-[750px]:mr-6">
          <router-link v-for="tvShow in tvShowsList" :key="tvShow.id" class="tvShow mb-2 rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :to="{ name: 'detailedInfo', params: {id: tvShow.id, contentType: 'tv'}}">
            <img :src="`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`" :alt="`Poster of the movie: ${tvShow.name}`">
            <div class="movie-footer">
