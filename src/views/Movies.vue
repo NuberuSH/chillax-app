@@ -20,7 +20,7 @@ import ScrollTopButton from '../components/ScrollTopButton.vue';
 
 export default {
     setup() {
-        const genreList = ref([]);
+        const genreList = ref();
         const selectedGenre = ref('');
          watch(selectedGenre, () => {
             console.log('debería hacer la petición', selectedGenre.value)
