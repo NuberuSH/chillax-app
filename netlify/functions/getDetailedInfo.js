@@ -18,8 +18,8 @@ export const handler = async (event, context) => {
   } catch (error) {
     console.error(error);
     return {
-      statusCode: 500,
-      body: JSON.stringify({ message: 'Internal Server Error' })
+      statusCode: 404,
+      body: JSON.stringify({ message: 'Not Found' })
     };
   }
 };

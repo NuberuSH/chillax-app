@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div id="movie-list" class="grid-cols-5">
-            <router-link v-for="movie in moviesList" :key="movie.id" class="movie"
+        <div id="movie-list" class="grid grid-cols-5 gap-5 mb-7">
+            <router-link v-for="movie in moviesList" class="movie mb-2 rounded-lg text-stone-300 text-sm font-light bg-web-bgCard hover:text-white hover:scale-110 hover:duration-200 hover:cursor-pointer" :key="movie.id"
                 :to="{ name: 'detailedInfo', params: { id: movie.id, contentType: 'movie' } }">
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"
                     :alt="`Poster of the movie: ${movie.name}`" />
                 <div class="movie-footer">
-                    <div>{{ movie.title }}</div>
+                    <div class="p-3">{{ movie.title }}</div>
                 </div>
             </router-link>
             <div ref="lastMovieRef"></div>
