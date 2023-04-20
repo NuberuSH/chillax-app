@@ -2,8 +2,8 @@
     <div v-if="contentData">
 
         <div v-if="isMovie" class="boxShadow w-4/5 mt-24 mb-24 mx-auto rounded-xl bg-web-card text-white shadow-3xl flex flex-col self-center sm:h-fit">
-            <div class='go-back hover:bg-web-boton2 w-fit py-1 px-2 text-l cursor-pointer rounded-md inline-block shadow-lg ml-4 mt-4'
-               >Volver atrás</div>
+            <button class='go-back hover:bg-web-boton2 w-fit py-1 px-2 text-l cursor-pointer rounded-md inline-block shadow-lg ml-4 mt-4' aria-label="botón volver atrás" @click="goBack"
+               >Volver atrás</button>
             <h1 class="text-2xl text-center overflow-ellipsis h-auto font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1"><span v-if="contentData.title">{{ contentData.title }}</span><span v-else>Título no disponible</span></h1>
             <hr class="w-4/5 self-center"/>
             <div class="flex flex-col md:flex-row ml-0 md:ml-10 justify-center mt-4">
@@ -21,8 +21,8 @@
             </div>
         </div>
             <div v-if="isTvShow" class="boxShadow w-4/5 mt-24 mb-24 mx-auto rounded-xl bg-web-card text-white shadow-3xl flex flex-col self-center sm:h-fit">
-                <div class='go-back hover:bg-web-boton2 w-fit py-1 px-2 text-l cursor-pointer rounded-md inline-block shadow-lg ml-4 mt-4'
-                >Volver atrás</div>
+                <button class='go-back hover:bg-web-boton2 w-fit py-1 px-2 text-l cursor-pointer rounded-md inline-block shadow-lg ml-4 mt-4' aria-label="botón volver atrás" @click="goBack"
+                >Volver atrás</button>
                 <h1 class="text-2xl text-center overflow-ellipsis h-auto font-semibold self-center mb-4 md:mb-6 mt-7 md:mt-0 mx-1">{{ contentData.name }}</h1>
                 <hr class="w-4/5 self-center"/>
                 <div class="flex flex-col md:flex-row ml-0 md:ml-10 justify-center mt-4">
@@ -62,6 +62,7 @@
 <script>
 import axios from 'axios';
 import { onMounted, ref, reactive, watchEffect } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import LoadingScreen from '../components/LoadingScreen.vue';
 import ErrorLoading from '../components/ErrorLoading.vue';
 
@@ -81,6 +82,12 @@ export default {
         });
         const contentExists = ref(false);
         const isLoading = ref(true);
+        const route = useRoute();
+        const router = useRouter();
+
+        function goBack() {
+            router.go(-1)
+        }
 
         onMounted(async () => {
             try {
@@ -137,7 +144,8 @@ export default {
             contentData,
             isMovie,
             isTvShow,
-            isLoading
+            isLoading,
+            goBack
         }
     },
     components: { LoadingScreen, ErrorLoading }
