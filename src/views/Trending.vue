@@ -1,4 +1,5 @@
 <template>
+<LoadingScreen v-if="isLoading"></LoadingScreen>
   <div class="mb-20 mt-24">
     <div class="container">
       <div id="movies">
@@ -17,14 +18,31 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue';
 import MoviesListLite from '../components/MoviesListLite.vue';
 import TvShowsListLite from '../components/TvShowsListLite.vue';
+import LoadingScreen from '../components/LoadingScreen.vue';
 
 export default {
-    setup() {},
+    setup() {
+    const isLoading = ref(true);
+
+    onMounted(() => {
+      setTimeout(() => {
+        isLoading.value = false;
+      }, 1000)
+    });
+
+
+
+    return {
+      isLoading
+    };
+    },
   components: {
     MoviesListLite,
     TvShowsListLite,
+    LoadingScreen
   }
 };
 </script>
