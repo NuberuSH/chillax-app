@@ -25,7 +25,7 @@ const router = createRouter({
     {
      path: '/test',
      name: 'test',
-     component: () => import('../components/MoviesListLite.vue')
+     component: () => import('../components/LoadingScreen.vue')
     },
     {
       path: '/about',
